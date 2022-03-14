@@ -39,7 +39,7 @@ export function PasswordInput(props) {
     <>
       <PasswordInputWrapper>
         <PasswordInputStyled {...props} />
-        <ToggleButton onClick={() => setShowPassword((s) => !s)}>
+        <ToggleButton onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? 'Hide' : 'Show'}
         </ToggleButton>
       </PasswordInputWrapper>

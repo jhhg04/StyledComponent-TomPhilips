@@ -1,5 +1,4 @@
-import { Button } from 'components/common';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from 'components/pages/Login';
 import Home from 'components/pages/Home';
@@ -13,9 +12,14 @@ body{
   font-family:'Kaushan Script' ;
 }`;
 
+const theme = {
+  primaryColor: '#090979',
+  secondaryColor: '#00d4ff',
+};
+
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Routes>
@@ -23,7 +27,7 @@ function App() {
           <Route path='/login' element={<Login />} />
         </Routes>
       </Router>
-    </>
+    </ThemeProvider>
   );
 }
 
